@@ -22,6 +22,13 @@ var platforms = [{
    name: "KhanAcademy",
    loggedIn : false,
    logoutPath:"/logout?continue=/"
+   },
+   {
+   domain: "https://retail.onlinesbi.com",
+   redirect: "/sbijava/images/logoutimages/right_curve.jpg",
+   name: "SBI",
+   loggedIn : false,
+   logoutPath:"/retail/logout.htm"
    }
                  
 ];
