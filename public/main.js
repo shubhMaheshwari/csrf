@@ -16,8 +16,14 @@ var platforms = [{
 	name: "Outlook",
 	loggedIn : true,
 	logoutPath:"/owa/logoff.owa"    	
-}
- 
+},{
+   domain: "https://www.khanacademy.org",
+   redirect: "/login?continue=%2Ffavicon.ico",
+   name: "KhanAcademy",
+   loggedIn : false,
+   logoutPath:"/logout?continue=/"
+   }
+                 
 ];
 
 
@@ -78,23 +84,24 @@ function logOutUser(){
   
   platforms.forEach(function(network) {
   	console.log(network.name + ':' + network.loggedIn);
-    if(network.loggedIn===true){
       console.log('Checking:' + network.name);
 
       var img = document.createElement('img');
       img.src = network.domain + network.logoutPath;
       console.log(img.src);
+
+      
       img.onload = function() {
 	//This fuction will never be called because these url dont return an image
-	console.log("Logout Sucessfully");          
+		console.log("Logout Sucessfully");          
       };
       
       img.onerror = function() {
-	console.log("Logging you out of " + network.name);          				            
+		console.log("Logging you out of " + network.name);          				            
       };
-    };
     
-    location.reload();			
+
+    
   });
 
 };
