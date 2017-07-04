@@ -12,11 +12,11 @@ var platforms = [{
   logoutPath:"/logout"    	
 },
                  {
-		   domain: "https://outlook.live.com",
-		   redirect: "/login.srf?wa=wsignin1.0&wreply=https%3A%2F%2Fprofile.microsoft.com%2FregsysProfilecenter%2FImages%2FLogin.jpg",
-		   name: "Outlook",
-		   loggedIn : true,
-		   logoutPath:"/owa/logoff.owa"    	
+                   domain: "https://www.khanacademy.org",
+		   redirect: "/login?continue=%2Ffavicon.ico",
+		   name: "KhanAcademy",
+		   loggedIn : false,
+		   logoutPath:"/logout?continue=/"
 	         }
                  
                 ];
