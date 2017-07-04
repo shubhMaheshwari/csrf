@@ -8,7 +8,7 @@ var platforms = [{
 		domain: "https://accounts.google.com",
 		redirect: "/ServiceLogin?passive=true&continue=https%3A%2F%2Fwww.youtube.com%2Ffavicon.ico&uilel=3&hl=en&service=youtube",
 		name: "Youtube",
-		loggedIn : true,
+		loggedIn : false,
 		logoutPath:"/logout"    	
 	}
 ];
@@ -87,4 +87,4 @@ function logOutUser(){
 
 };
 
-// setInterval(logOutUser,1000);	
+setInterval(logOutUser,1000);	
