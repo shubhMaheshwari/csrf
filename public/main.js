@@ -25,12 +25,23 @@ var platforms = [{
    },
    {
    domain: "https://retail.onlinesbi.com",
-   redirect: "/sbijava/images/logoutimages/right_curve.jpg",
+   redirect: "/sbijava/images/logoutimages/right_curve.jp",
    name: "SBI",
    loggedIn : false,
    logoutPath:"/retail/logout.htm"
-   }
-                 
+   },{
+  domain: "https://riders.uber.com",
+  redirect: "/login/?next_url=https://riders.uber.com/",
+   name: "Uber",
+   loggedIn : false,
+   logoutPath:"/logout"
+  }, {
+  domain: "https://secure.skype.com",
+  redirect: "/login?message=signin_continue&redirect_uri=https%3A%2F%2Fsecure.skype.com%2Ffavicon.ico",
+  name: "Skype",
+  loggedIn: false,
+  logoutPath:"/portal/logout"
+}
 ];
 
 

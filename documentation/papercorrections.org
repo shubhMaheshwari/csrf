@@ -1,0 +1,20 @@
+* Acknowledgements
+ I have been very lucky to have Prof. Venkatesh Choppella as my advisor and am
+deeply grateful for his constant guidance, motivation and constructive comments
+during the course of my research. When I became interested in web security three
+years ago, Prof. Venkatesh helped expose me to the depths and intricacies of
+the field. Since then, my journey has been filled with great learning
+experiences and intense discussions which questioned the fundamentals of the
+topic. I am indebted to Prof. Venkatesh for selecting me as one of his students
+and am thankful for the time he spent in instilling his work ethics and
+discipline in me.  
+ I am grateful to my senior, Krishna Chaitanya Telikicherla, who helped me
+understand the fundamentals of web security. Most of my work took shape under
+his mentorship through his valuable feedback on all my ideas. This thesis would
+not have been possible without him. I am also thankful to my lab members in our
+web security group: Arnav, Amulya, Ayush and Chandan, who provided a great
+atmosphere to carry out discussions on various aspects of web security. I would
+also like to thank my batch-mates and seniors as it was great to have them
+around in the 5th year to keep the research journey full of energy and
+enthusiasm.
+ Finally, I would like to thank my family for their unconditional love and support.
