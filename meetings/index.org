@@ -1,0 +1,16 @@
+* [2017-07-04 Tuesday] 
+- While logout are nice attacks they aren't damaging enough to be eye catching
+
+* [2017-07-05 Wednesday]
+- Title(for now?): Modeling and Mitigation of csrf attacks on FIM
+
+- TODOs:
+  - Find sites made intentionally vulnerable to csrf, and check if corp can protect
+
+  - Look for alternate workflows in FIM(actual websites), and check if CORP can
+    mitigate: essentially check the boundaries of CORP's capabilities and
+    application  to multiple styles of FIM.
+
+Sections to be kept separate in paper
+- Modeling
+- Experimentation

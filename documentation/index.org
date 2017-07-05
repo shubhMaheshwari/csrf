@@ -1,9 +1,16 @@
 * Paper Outline
-** Title
+** Working Title: Modeling and Mitigation of CSRF Attacks on FIM
 - Summary of Abstract
-** Abstract
+** TODO Abstract
 1/2 page
 - Summary of Intro
+*** Working Abstract:
+Our abstract for now(verify) is something like this: we are showing that FIM is
+not an all-encompassing security measure. CSRF attacks can still be carried out
+on the application as that isnt even part of the model(here demo of regular
+csrf attacks on intentionally vulnerable website). In addition FIM is weak to
+another csrf attack: logout. Both these problems can be mitigted(hopefully)
+using corp
 ** Introduction
 2-3 pages
 - Summary of paper
@@ -15,10 +22,17 @@
 ** Related Work
 ** Method and Technique
 - What is FIM
+** Modeling
 - How we modeled it alloy
-- Implementation of experiment
-- Conclusion
-- Future Outlook
+** Experimentation
+- Implementation of experiments
+** Conclusion
+** Future Outlook
+
+
+
+
+
 * Experiment
 ** Generic
 *** Vulnerabilities Check
@@ -30,14 +44,10 @@ how:
 - fix one website, then based on e
 *** Mitigation tests
 - using corp extension
-** 
 
+  
 * Mitigation
-
-* TODO 
-- Login with google websites
-- find a vulnerable endpoint
-- vlabs end points
+Check with corp extension in chrome
 
 * Robin Linus
 - all the websits which use FIM, are vulnerable to click jacking which they are
