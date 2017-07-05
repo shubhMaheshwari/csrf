@@ -55,7 +55,7 @@ Check with corp extension in chrome
 
 
 
-* Attack 1 : Cross-Site Timing Attack
+* Cross-Site Timing Attack
 - Use with Khanacademy: if logged in logo will show up else not;.
 #+BEGIN_SRC html :tangle khanacademychecklogin.html
 <html>
@@ -102,11 +102,20 @@ Check with corp extension in chrome
 </body>
 </html>
 #+END_SRC
+<<<<<<< HEAD
 * Super logout
 #+BEGIN_EXAMPLE
 https://superlogout.com
 #+END_EXAMPLE
 * SBI logout
+#+BEGIN_SRC html :tangle sbilogout.html
+<html>
+<head><title>SBI Logout</title></head>
+<body>
+<img src="https://retail.onlinesbi.com/retail/logout.htm"/>
+</body>
+</html>
+#+END_SRC
 * IOB logout
 #+BEGIN_SRC html :tangle ioblogout.html
 <html>
@@ -116,3 +125,53 @@ https://superlogout.com
 </body>
 </html>
 #+END_SRC
+
+
+* Read on clickjacking
+** Busting Frame Busting:a Study of Clickjacking Vulnerabilities on Popular Sites
+This paper was published in 2010 . It shows many vulnerability in sites at those times 
+and how clickjacking cannot be stopped just by frame busting and new policies must be 
+added into our web.
+
+*** Frame bursting example
+ i f ( top . location   !=   self.location ){
+top .location = self.location ;
+}
+
+
+*** Methods against frame bursting
+  1.Use the window.onbeforeunload function to not unload a frame
+    1.1 this can be done by asking the user "to not leave page"(alert box) 
+    1.2 Flushing the request to unload by stopping the unload request by continuously calling this window.onbeforeunload\
+  2.Disable js (both inline and external )
+    2.1 inline by by using XSS filters to not allow these scripts
+    2.2 External by simplying disable js
+
+  
+  3.By passing the Regular expressions in frame busting js 
+    By just placing the domian of the victim in the url
+
+  4.Changing the value of location as  it can be redefined
+
+  5.Security="restricted"
+
+** Faults in XFO
+   1.Per page specification
+   2.One-type domain allowed per page 
+   3. *Proxies can remove headers*
+
+
+** XFO Headers 
+   meta tags to make website more secrue by only allowing only some iframes(Cross origin request) 
+   using the value specified in the header
+*** Value of the header
+    1.DENY
+    2.SAMEORIGIN
+    3.ALLOWED-FROM
+
+ 
+
+** X-Content-type
+   headers which specify what kind of file is being loaded by a particular request
+   eg. text/plain,text/html,images/jpeg
+
