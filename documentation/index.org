@@ -102,3 +102,8 @@ Check with corp extension in chrome
 </body>
 </html>
 #+END_SRC
+* Super logout
+#+BEGIN_EXAMPLE
+https://superlogout.com
+#+END_EXAMPLE
+* SBI logout
