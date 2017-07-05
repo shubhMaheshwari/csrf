@@ -80,7 +80,7 @@ Check with corp extension in chrome
 <html>
 <head><title>Google Logout Attack</title></head>
 <body>
-<img src="https://accounts.google.com/logout"/>
+<img src="https://accounts.google.com/Logout"/>
 </body>
 </html>
 #+END_SRC
@@ -174,4 +174,13 @@ top .location = self.location ;
 ** X-Content-type
    headers which specify what kind of file is being loaded by a particular request
    eg. text/plain,text/html,images/jpeg
+
+* Websites to check if CORP can protect from csrf
+- http://www.itsecgames.com/ (bwapp: buggy web app)
+- http://www.dvwa.co.uk/ (dvwa: damn vulnerable web app)
+* FIM systems: for each try find an example
+** Microsoft's .NET Passport (old)
+** UK Athens (old)
+** Shibboleth
+** CardSpace
 
