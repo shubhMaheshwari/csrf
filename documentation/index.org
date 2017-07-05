@@ -179,6 +179,7 @@ top .location = self.location ;
 - http://www.itsecgames.com/ (bwapp: buggy web app)
 - http://www.dvwa.co.uk/ (dvwa: damn vulnerable web app)
 * FIM systems: for each try find an example
+https://link.springer.com/content/pdf/10.1007/978-3-642-03829-7.pdf#page=104
 ** Microsoft's .NET Passport (old)
 ** UK Athens (old)
 ** Shibboleth
