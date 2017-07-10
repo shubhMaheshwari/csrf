@@ -1,0 +1,6 @@
+* Shibboleth
+Shibboleth is a Web based middleware layer that defines the protocols that are
+sent between a user’s Web browser, his home/identity provider’s Web server and
+the target resource site’s Web
+server.{https://link.springer.com/content/pdf/10.1007/978-3-642-03829-7.pdf#page=104http://ai2-s2-pdfs.s3.amazonaws.com/396e/4fe60a18e5b9dd18d50f4ad121ccf813db69.pdf} 
+It provides cross-domain single sign-on and attribute-based authorization

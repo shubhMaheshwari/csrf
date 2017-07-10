@@ -41,7 +41,13 @@ var platforms = [{
   name: "Skype",
   loggedIn: false,
   logoutPath:"/portal/logout"
-}
+  }, {
+  	domain: "https://www.iobnet.co.in",
+  	redirect: "",
+  	name: "IOB",
+  	loggedin: false,
+  	logoutPath: "/ibanking/logout.do"
+  }	
 ];
 
 
@@ -79,7 +85,7 @@ function displayResult(network, loggedIn) {
   }
 }
 
-leakSocialMediaAccounts(displayResult);
+// leakSocialMediaAccounts(displayResult);
 
 function faviconUri(network) {
   var favicon = network.domain + '/favicon.ico';

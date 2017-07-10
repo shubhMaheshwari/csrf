@@ -12,7 +12,7 @@ csrf attacks on intentionally vulnerable website). In addition FIM is weak to
 another csrf attack: logout. Both these problems can be mitigted(hopefully)
 using corp
 ** Introduction
-2-3 pages
+- 2-3 pages
 - Summary of paper
 - Motivation
 - Related Work
