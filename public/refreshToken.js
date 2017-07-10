@@ -1,18 +1,15 @@
 var network ={
-domain: "https://www.khanacademy.org",
-redirect: "/login?continue=%2Ffavicon.ico",
-name: "KhanAcademy",
-loggedIn : false,
-logoutPath:"/logout?continue=/"
+        domain: "https://medium.com",
+   redirect: "/m/signin?redirect=https%3A%2F%2Fmedium.com%2Ffavicon.ico&loginType=default",
+        name: "Medium",
+	loggedIn: false
 }
 
 var IDP= {
-	domain: "https://accounts.google.com",
-	redirect: "/ServiceLogin?passive=true&continue=https%3A%2F%2Fwww.google.com%2Ffavicon.ico&uilel=3&hl=en&service=mail",
-	name: "Gmail",
-	loggedIn: false,
-	logoutPath:"/logout"
-}
+        domain: "https://www.facebook.com",
+        redirect: "/login.php?next=https%3A%2F%2Fwww.facebook.com%2Ffavicon.ico%3F_rdr%3Dp",
+        name: "Facebook",
+      }
 
 var lastLoggedInTime={}
 var refreshToken={};
@@ -21,16 +18,16 @@ var loggedInSocialMediaAccounts = function() {
 			var img = document.createElement('img');
 			img.src = network.domain + network.redirect;
 			img.onload = function() {
-				if(network.loggedIn==false)
-				{
+				if(network.loggedIn==false && loggedOut(IDP))
+				{ 
 				network.loggedIn=true;
 				var now = new Date().getTime()            
 				lastLoggedInTime[network]=now;
 				console.log('Logged in ' + network.name)				
 				console.log(now)
-				logOutUser(IDP);		
 				}
 			};
+
 			img.onerror = function() {
 				if(network.loggedIn==true)
 					{ var now = new Date().getTime()
@@ -43,7 +40,7 @@ var loggedInSocialMediaAccounts = function() {
 			};
 };
 
-function logOutUser(network){
+function loggedOut(network){
 	
 			var img = document.createElement('img');
 			img.src = network.domain + network.logoutPath;
@@ -51,11 +48,11 @@ function logOutUser(network){
 			console.log('Checking');
 			console.log(img.src);			
 			img.onload = function() {
-		//This fuction will never be called because these url dont return an image
+				return false;
 			};
-			
+
 			img.onerror = function() {
-		console.log("Logging you out of " + network.name);                              
+				return true;				
 			};
 
 };
