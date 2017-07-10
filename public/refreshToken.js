@@ -1,61 +1,57 @@
-var network ={
-        domain: "https://medium.com",
-   redirect: "/m/signin?redirect=https%3A%2F%2Fmedium.com%2Ffavicon.ico&loginType=default",
-        name: "Medium",
-	loggedIn: false
+var network = {
+        domain: "https://bitbucket.org",
+        redirect: "/account/signin/?next=/favicon.ico",
+        name: "BitBucket",
+		loggedIn : false,
+		logoutPath:"/logout?continue=/",
 }
 
 var IDP= {
-        domain: "https://www.facebook.com",
-        redirect: "/login.php?next=https%3A%2F%2Fwww.facebook.com%2Ffavicon.ico%3F_rdr%3Dp",
-        name: "Facebook",
-      }
+	domain: "https://accounts.google.com",
+	redirect: "/ServiceLogin?passive=true&continue=https%3A%2F%2Fwww.google.com%2Ffavicon.ico&uilel=3&hl=en&service=mail",
+	name: "Gmail",
+	loggedIn: false,
+	logoutPath:"/logout"
+}
 
 var lastLoggedInTime={}
 var refreshToken={};
-
 var loggedInSocialMediaAccounts = function() {
 			var img = document.createElement('img');
 			img.src = network.domain + network.redirect;
+
+			if(network.loggedIn==false){
 			img.onload = function() {
-				if(network.loggedIn==false && loggedOut(IDP))
-				{ 
-				network.loggedIn=true;
+				network.loggedIn=true
 				var now = new Date().getTime()            
-				lastLoggedInTime[network]=now;
-				console.log('Logged in ' + network.name)				
-				console.log(now)
-				}
-			};
+				logOutUser(IDP);		
+				location.reload(true)
+			}};
 
 			img.onerror = function() {
-				if(network.loggedIn==true)
-					{ var now = new Date().getTime()
-						refreshToken[network] = lastLoggedInTime[network] - now;
+					 var now = new Date().getTime()
+						refreshToken[network] =now;
 						console.log('Logged out ' + network.name)				
 						console.log(now)
-						console.log(refreshToken[network].getHours() + " Hours " + refreshToken[network].getMinutes() + " Minutes " + refreshToken[network].getSeconds() + " Seconds");
-						network.loggedIn=false;            
-					}
+						// console.log(refreshToken[network]);
 			};
 };
 
-function loggedOut(network){
+function logOutUser(network){
 	
 			var img = document.createElement('img');
 			img.src = network.domain + network.logoutPath;
-			
-			console.log('Checking');
-			console.log(img.src);			
-			img.onload = function() {
-				return false;
+						img.onload = function() {
+		//This fuction will never be called because these url dont return an image
 			};
-
+			
 			img.onerror = function() {
-				return true;				
+		console.log("Logging you out of " + network.name);                              
 			};
 
 };
 
 // setInterval(logOutUser,1000);	
-setInterval(loggedInSocialMediaAccounts,1000);
+// var id =setInterval(loggedInSocialMediaAccounts,3000);
+
+loggedInSocialMediaAccounts()

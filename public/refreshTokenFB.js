@@ -43,7 +43,7 @@ var loggedInSocialMediaAccounts = function() {
 function loggedOut(network){
 	
 			var img = document.createElement('img');
-			img.src = network.domain + network.logoutPath;
+			img.src = network.domain + network.redirect;
 			
 			console.log('Checking');
 			console.log(img.src);			
