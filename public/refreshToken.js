@@ -1,9 +1,9 @@
-var network ={
-domain: "https://www.khanacademy.org",
-redirect: "/login?continue=%2Ffavicon.ico",
-name: "KhanAcademy",
-loggedIn : false,
-logoutPath:"/logout?continue=/"
+var network = {
+        domain: "https://bitbucket.org",
+        redirect: "/account/signin/?next=/favicon.ico",
+        name: "BitBucket",
+		loggedIn : false,
+		logoutPath:"/logout?continue=/",
 }
 
 var IDP= {
@@ -16,30 +16,24 @@ var IDP= {
 
 var lastLoggedInTime={}
 var refreshToken={};
-
 var loggedInSocialMediaAccounts = function() {
 			var img = document.createElement('img');
 			img.src = network.domain + network.redirect;
+
+			if(network.loggedIn==false){
 			img.onload = function() {
-				if(network.loggedIn==false)
-				{
-				network.loggedIn=true;
+				network.loggedIn=true
 				var now = new Date().getTime()            
-				lastLoggedInTime[network]=now;
-				console.log('Logged in ' + network.name)				
-				console.log(now)
 				logOutUser(IDP);		
-				}
-			};
+				location.reload(true)
+			}};
+
 			img.onerror = function() {
-				if(network.loggedIn==true)
-					{ var now = new Date().getTime()
-						refreshToken[network] = lastLoggedInTime[network] - now;
+					 var now = new Date().getTime()
+						refreshToken[network] =now;
 						console.log('Logged out ' + network.name)				
 						console.log(now)
-						console.log(refreshToken[network].getHours() + " Hours " + refreshToken[network].getMinutes() + " Minutes " + refreshToken[network].getSeconds() + " Seconds");
-						network.loggedIn=false;            
-					}
+						// console.log(refreshToken[network]);
 			};
 };
 
@@ -47,10 +41,7 @@ function logOutUser(network){
 	
 			var img = document.createElement('img');
 			img.src = network.domain + network.logoutPath;
-			
-			console.log('Checking');
-			console.log(img.src);			
-			img.onload = function() {
+						img.onload = function() {
 		//This fuction will never be called because these url dont return an image
 			};
 			
@@ -61,4 +52,6 @@ function logOutUser(network){
 };
 
 // setInterval(logOutUser,1000);	
-setInterval(loggedInSocialMediaAccounts,1000);
+// var id =setInterval(loggedInSocialMediaAccounts,3000);
+
+loggedInSocialMediaAccounts()
