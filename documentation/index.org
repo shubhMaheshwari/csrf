@@ -102,7 +102,7 @@ Check with corp extension in chrome
 </body>
 </html>
 #+END_SRC
-<<<<<<< HEAD
+
 * Super logout
 #+BEGIN_EXAMPLE
 https://superlogout.com
@@ -180,8 +180,22 @@ top .location = self.location ;
 - http://www.dvwa.co.uk/ (dvwa: damn vulnerable web app)
 * FIM systems: for each try find an example
 https://link.springer.com/content/pdf/10.1007/978-3-642-03829-7.pdf#page=104
+
+** Benifits of FIM over a Centralized System
+***  it gives users the single sign on (SSO) capability, allowing them to move between the various service providers without  having  to  authenticate  or  log  in  again, 
+*** it  allows  service  providers  to  offload  the  cost  of  managing  user  attributes,  passwords and login credentials to trusted identity providers 
+*** it provides scalability, allowing service providers to offer services to a much greater number of users 
+*** it  allows  identity  providers  to  maintain  close  relationships  with  end  users and sell  them  additional  services,  as  well  as  extract  fees  from  the  service providers they support. 
+   
+
+** 7 Laws of FIM
+   page 329 of the book 
+
+
 ** Microsoft's .NET Passport (old)
 ** UK Athens (old)
 ** Shibboleth
 ** CardSpace
+
+
 
