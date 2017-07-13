@@ -55,10 +55,10 @@ var platforms = [//{
 //   loggedIn: false,
 //   logoutPath:"/logout"
 //   },
-                 {
-    domain: "https://twitter.com",
-    redirect: "/login?redirect_after_login=%2Ffavicon.ico",
-    name: "Twitter",
+  {
+    domain: "https://bitbucket.org",
+    redirect: "/account/signin/?next=/favicon.ico",
+    name: "BitBucket",
     loggedIn: false,
     logoutPath: "/logout"
   }
