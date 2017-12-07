@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Attacker Site</title>
+	<title>Login Detection Site</title>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	<meta charset="utf-8">
@@ -11,31 +11,38 @@
 
 
 	<script src="/main.js"></script>	
-	<!-- <script src="/refreshToken.js"></script> -->
 
 </head>
 
 <body >
+
+<header>
+	
+</header>
+
 <main>
 	<div class="container">
-		<div class="row">
-			 <h1 style="text-align:center"
-			 class="card-title"><a href="/">This Site Doesn't Do
-			     Anything</a></h1>
-                         <!-- <h2 style="text-align:center"><a href="/">Really!</a></h2> -->
-		</div>
-                <div class="row"></div>
-		<!-- <div style="text-align:center" class="row"> -->
-		<!-- 	<a class="waves-effect btn" hred="/" onclick="logOutUser()">Click to win an IPad</a> -->
+		<nav class="teal">
+		<div class="nav-content">
+      		<ul class="tabs tabs-transparent">
+		        <li class="tab"><a class="active" href="#login_detection">Login Detection</a></li>
+		        <li class="tab"><a href="#auto_logout">Auto Logout</a></li>
+      		</ul>
+    	</div>
+		</nav>
 
-			<!-- <a class="waves-effect btn" hred="/" onclick="window.location.reload(true)">Refresh</a> -->
-
-			<!-- <img src="https://retail.onlinesbi.com/sbijava/images/post_login_bg.jpg" />		 -->	
-		</div>
-                <h3 class="card-title" style="text-align: center"><a href="/">You are Logged In at These</h3>
+		
+		<div class="row" id="login_detection">
+            <h4 class="card-title" style="text-align: center"><a href="/">You are logged in at these sites</a></h4>
 	        <div style="text-align:center" id="loggedIn"></div>
-                <h3 class="card-title" style="text-align: center"><a href="/">You are Logged Out at These</h3>
-                <div style="text-align:center" id="notLoggedIn"></div>
+	        <h4 class="card-title" style="text-align: center"><a href="/">You are logged out of these</h4>
+            <div style="text-align:center" id="notLoggedIn"></div>
+        </div>
+        <div class="row" id="auto_logout">
+			<div class="col">
+			<a class="waves-effect btn" style="text-align:center" onclick="logOutUser()">Begin Logout Attacker</a>			
+		    </div>        
+		</div>
 	</div>	
 
 </main>	
