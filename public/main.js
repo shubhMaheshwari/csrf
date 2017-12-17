@@ -47,12 +47,6 @@ var login_platforms = [{
   loggedIn: false 
    },
   {
-    domain: "https://bitbucket.org",
-    redirect: "/account/signin/?next=/favicon.ico",
-    name: "BitBucket",
-    loggedIn: false
-  },
-  {
     domain: "https://squareup.com",
     redirect: "/login?return_to=%2Ffavicon.ico",
     name: "Square",
@@ -69,12 +63,6 @@ var login_platforms = [{
     redirect: "/login.php?next=https%3A%2F%2Fwww.facebook.com%2Ffavicon.ico%3F_rdr%3Dp",
     name: "Facebook",
     loggedIn: false  
-  },
-  {
-    domain: "https://plus.google.com",
-    redirect: "/up/accounts/upgrade/?continue=https://plus.google.com/favicon.ico",
-    name: "Google Plus",
-    loggedIn: false
   },
   {
     domain: "https://www.spotify.com",
@@ -168,6 +156,13 @@ var login_platforms = [{
     loggedIn: false
   }];
 
+var login_platforms = [
+ {
+    domain: "https://www.facebook.com",
+    redirect: "/login.php?next=https%3A%2F%2Fwww.facebook.com%2Ffavicon.ico%3F_rdr%3Dp",
+    name: "Facebook",
+    loggedIn: false  
+  }]
 // Do not work (anymore)
 // {
 //     url: "https://login.live.com/login.srf?wa=wsignin1.0&wreply=https%3A%2F%2Fprofile.microsoft.com%2FregsysProfilecenter%2FImages%2FLogin.jpg",
@@ -207,6 +202,18 @@ var login_platforms = [{
 //      redirect: "/signin/yahoo/?redir=https%3A%2F%2Fwww.flickr.com/favicon.ico",
 //      name: "Flickr"
 //   }
+// {
+//   domain: "https://bitbucket.org",
+//   redirect: "/account/signin/?next=/favicon.ico",
+//   name: "BitBucket",
+//   loggedIn: false
+// },
+  // {
+  //   domain: "https://plus.google.com",
+  //   redirect: "/up/accounts/upgrade/?continue=https://plus.google.com/favicon.ico",
+  //   name: "Google Plus",
+  //   loggedIn: false
+  // }
 
 logout_platforms=[{
   name: "Gmail",
@@ -235,9 +242,6 @@ logout_platforms=[{
   },{
   name: "Messenger",
   logoutPath:"https://www.messenger.com/logout"
-  },{
-  name: "BitBucket",
-  logoutPath: "https://bitbucket.org/logout"
   },{
     name:"Yahoo",
     logoutPath: "https://login.yahoo.com/config/login?.src=fpctx&logout=1&.direct=1&.done=http://www.yahoo.com/"
@@ -271,10 +275,16 @@ logout_platforms=[{
   },{
     name: "Tumblr",
     logoutPath: "http://www.tumblr.com/logout"
-  },{
-    name:"Vimeo",
-    logoutPath: "http://vimeo.com/log_out"
   }];
+// The site doesn't work anymore on 
+// {
+//   name: "BitBucket",
+//   logoutPath: "https://bitbucket.org/account/signout"
+//   }
+// {
+//     name:"Vimeo",
+//     logoutPath: "http://vimeo.com/log_out"
+//   }
 
 var lastLoggedInTime={};
 var refreshToken={};
